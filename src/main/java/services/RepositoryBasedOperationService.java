@@ -1,5 +1,6 @@
 package services;
 
+import exceptions.InsufficientBalanceException;
 import exceptions.NegativeAmountException;
 import model.Operation;
 import model.OperationType;
@@ -30,6 +31,20 @@ public class RepositoryBasedOperationService implements OperationService {
 
         BigDecimal balance = getBalanceOfAccount(accountId);
         createOperation(accountId, amount, OperationType.DEPOSIT, balance.add(amount));
+    }
+
+    @Override
+    public void withdraw(UUID accountId, BigDecimal amount) throws NegativeAmountException, InsufficientBalanceException {
+        if(amount.doubleValue() < 0) {
+            throw new NegativeAmountException();
+        }
+
+        BigDecimal balance = getBalanceOfAccount(accountId);
+
+        if(balance.compareTo(amount) < 0) {
+            throw new InsufficientBalanceException();
+        }
+        createOperation(accountId, amount, OperationType.WITHDRAW, balance.subtract(amount));
     }
 
     private BigDecimal getBalanceOfAccount(UUID accountId) {

@@ -1,5 +1,5 @@
 package model;
 
 public enum OperationType {
-    DEPOSIT
+    DEPOSIT, WITHDRAW
 }
