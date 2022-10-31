@@ -11,4 +11,6 @@ public interface OperationService {
     void deposit(UUID id, BigDecimal amount) throws NegativeAmountException;
 
     void withdraw(UUID id, BigDecimal amount) throws NegativeAmountException, InsufficientBalanceException;
+
+    void printAccountStatement(UUID accountId);
 }

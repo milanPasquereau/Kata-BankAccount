@@ -11,4 +11,6 @@ public interface OperationRepository {
     Operation create(Operation operation);
 
     BigDecimal getBalanceOfAccountById(UUID accountId);
+
+    List<Operation> getOperationsOfAccountById(UUID accountId);
 }

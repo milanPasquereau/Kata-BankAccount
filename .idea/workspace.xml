@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fea0ccfe-8d31-4701-aae1-6ff1a6f2068a" name="Changes" comment="[FEAT-US-1] Ajout de la fonctionnalité de dépôt d'argent, modèle, service et TUs associés">
+    <list default="true" id="fea0ccfe-8d31-4701-aae1-6ff1a6f2068a" name="Changes" comment="[FEAT-US-2] Ajout de la fonctionnalité de retrait d'argent, modèle, service et TUs associés">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/OperationType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/OperationType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/repositories/OperationRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repositories/OperationRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/services/OperationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/OperationService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/services/RepositoryBasedOperationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/RepositoryBasedOperationService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/services/RepositoryBasedOperationServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/services/RepositoryBasedOperationServiceTest.java" afterDir="false" />
@@ -22,8 +22,8 @@
         <option value="Record" />
         <option value="Enum" />
         <option value="Interface" />
-        <option value="JUnit5 Test Class" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -53,6 +53,8 @@
       <recent name="" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="formatter" />
+      <recent name="writer" />
       <recent name="services" />
     </key>
   </component>
@@ -94,7 +96,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667206927990</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="[FEAT-US-2] Ajout de la fonctionnalité de retrait d'argent, modèle, service et TUs associés">
+      <created>1667210013865</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1667210013866</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -111,6 +120,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initialisation du projet (gitignore, pom)" />
     <MESSAGE value="[FEAT-US-1] Ajout de la fonctionnalité de dépôt d'argent, modèle, service et TUs associés" />
-    <option name="LAST_COMMIT_MESSAGE" value="[FEAT-US-1] Ajout de la fonctionnalité de dépôt d'argent, modèle, service et TUs associés" />
+    <MESSAGE value="[FEAT-US-2] Ajout de la fonctionnalité de retrait d'argent, modèle, service et TUs associés" />
+    <option name="LAST_COMMIT_MESSAGE" value="[FEAT-US-2] Ajout de la fonctionnalité de retrait d'argent, modèle, service et TUs associés" />
   </component>
 </project>

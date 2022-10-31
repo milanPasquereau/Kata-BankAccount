@@ -2,14 +2,17 @@ package services;
 
 import exceptions.InsufficientBalanceException;
 import exceptions.NegativeAmountException;
+import model.AccountStatement;
 import model.Operation;
 import model.OperationType;
 import repositories.OperationRepository;
+import writer.AccountStatementWriter;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.time.Clock;
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.UUID;
 
 public class RepositoryBasedOperationService implements OperationService {
@@ -18,9 +21,12 @@ public class RepositoryBasedOperationService implements OperationService {
 
     private final Clock clock;
 
-    public RepositoryBasedOperationService(OperationRepository operationRepository, Clock clock) {
+    private final AccountStatementWriter writer;
+
+    public RepositoryBasedOperationService(OperationRepository operationRepository, Clock clock, AccountStatementWriter writer) {
         this.operationRepository = operationRepository;
         this.clock = clock;
+        this.writer = writer;
     }
 
     @Override
@@ -45,6 +51,13 @@ public class RepositoryBasedOperationService implements OperationService {
             throw new InsufficientBalanceException();
         }
         createOperation(accountId, amount, OperationType.WITHDRAW, balance.subtract(amount));
+    }
+
+    @Override
+    public void printAccountStatement(UUID accountId) {
+        BigDecimal balance = getBalanceOfAccount(accountId);
+        List<Operation> operations = operationRepository.getOperationsOfAccountById(accountId);
+        writer.write(new AccountStatement(accountId, operations, balance, LocalDateTime.now(clock)));
     }
 
     private BigDecimal getBalanceOfAccount(UUID accountId) {

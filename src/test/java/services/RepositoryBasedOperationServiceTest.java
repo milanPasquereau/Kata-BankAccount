@@ -2,6 +2,7 @@ package services;
 
 import exceptions.InsufficientBalanceException;
 import exceptions.NegativeAmountException;
+import model.AccountStatement;
 import model.Operation;
 import model.OperationType;
 import org.junit.jupiter.api.BeforeEach;
@@ -12,6 +13,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import repositories.OperationRepository;
+import writer.AccountStatementWriter;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
@@ -19,6 +21,7 @@ import java.time.Clock;
 import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
+import java.util.List;
 import java.util.UUID;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -30,6 +33,9 @@ class RepositoryBasedOperationServiceTest {
     @Mock
     private OperationRepository operationRepository;
 
+    @Mock
+    private AccountStatementWriter writer;
+
     @InjectMocks
     private RepositoryBasedOperationService operationService;
 
@@ -37,7 +43,7 @@ class RepositoryBasedOperationServiceTest {
 
     @BeforeEach
     void init() {
-        operationService = new RepositoryBasedOperationService(operationRepository, clock);
+        operationService = new RepositoryBasedOperationService(operationRepository, clock, writer);
     }
 
     @Test
@@ -103,5 +109,26 @@ class RepositoryBasedOperationServiceTest {
 
         verify(operationRepository).getBalanceOfAccountById(accountId);
         verifyNoMoreInteractions(operationRepository);
+    }
+
+    @Test
+    void shouldPrintAccountStatement() {
+        final UUID accountId = UUID.randomUUID();
+        final BigDecimal balance = BigDecimal.valueOf(30000.011);
+        final List<Operation> operations = List.of(
+                new Operation(accountId, LocalDateTime.now(clock), BigDecimal.valueOf(50000.011), OperationType.DEPOSIT, BigDecimal.valueOf(50000.011)),
+                new Operation(accountId, LocalDateTime.now(clock), BigDecimal.valueOf(20000.011), OperationType.WITHDRAW, BigDecimal.valueOf(30000.011))
+        );
+        final AccountStatement statement = new AccountStatement(accountId, operations, BigDecimal.valueOf(30000.011), LocalDateTime.now(clock));
+        when(operationRepository.getBalanceOfAccountById(accountId)).thenReturn(balance);
+        when(operationRepository.getOperationsOfAccountById(accountId)).thenReturn(operations);
+
+        operationService.printAccountStatement(accountId);
+
+        InOrder inOrder = inOrder(operationRepository, writer);
+        inOrder.verify(operationRepository).getBalanceOfAccountById(accountId);
+        inOrder.verify(operationRepository).getOperationsOfAccountById(accountId);
+        inOrder.verify(writer).write(statement);
+        inOrder.verifyNoMoreInteractions();
     }
 }
