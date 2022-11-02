@@ -1,6 +1,6 @@
 package writer;
 
-import formatter.FormatterAccountStatement;
+import formatter.AccountStatementFormatter;
 import model.AccountStatement;
 import model.Operation;
 import model.OperationType;
@@ -32,7 +32,7 @@ class FormattedAccountStatementWriterTest {
     private final PrintStream originalOut = System.out;
 
     @Mock
-    private FormatterAccountStatement formatter;
+    private AccountStatementFormatter formatter;
 
     @InjectMocks
     private FormattedAccountStatementWriter writer;

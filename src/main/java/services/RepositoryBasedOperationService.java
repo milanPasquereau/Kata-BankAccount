@@ -34,7 +34,7 @@ public class RepositoryBasedOperationService implements OperationService {
         if(amount.doubleValue() <= 0) {
             throw new NegativeAmountException();
         }
-
+        amount = roundAmount(amount);
         BigDecimal balance = getBalanceOfAccount(accountId);
         createOperation(accountId, amount, OperationType.DEPOSIT, balance.add(amount));
     }
@@ -46,7 +46,7 @@ public class RepositoryBasedOperationService implements OperationService {
         }
 
         BigDecimal balance = getBalanceOfAccount(accountId);
-
+        amount = roundAmount(amount);
         if(balance.compareTo(amount) < 0) {
             throw new InsufficientBalanceException();
         }
@@ -65,7 +65,7 @@ public class RepositoryBasedOperationService implements OperationService {
     }
 
     private void createOperation(UUID accountId, BigDecimal amount, OperationType operationType, BigDecimal balance) {
-        operationRepository.create(new Operation(accountId, LocalDateTime.now(clock), roundAmount(amount), operationType, roundAmount(balance)));
+        operationRepository.create(new Operation(accountId, LocalDateTime.now(clock), amount, operationType, balance));
     }
 
     private BigDecimal roundAmount(BigDecimal amount) {

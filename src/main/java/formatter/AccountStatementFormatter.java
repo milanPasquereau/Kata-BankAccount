@@ -2,7 +2,7 @@ package formatter;
 
 import model.AccountStatement;
 
-public interface FormatterAccountStatement {
+public interface AccountStatementFormatter {
 
     String formatAccountStatement(AccountStatement accountStatement);
 }

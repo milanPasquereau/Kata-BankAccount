@@ -1,13 +1,13 @@
 package writer;
 
-import formatter.FormatterAccountStatement;
+import formatter.AccountStatementFormatter;
 import model.AccountStatement;
 
 public class FormattedAccountStatementWriter implements AccountStatementWriter{
 
-    private final FormatterAccountStatement formatter;
+    private final AccountStatementFormatter formatter;
 
-    public FormattedAccountStatementWriter(FormatterAccountStatement formatter) {
+    public FormattedAccountStatementWriter(AccountStatementFormatter formatter) {
         this.formatter = formatter;
     }
     @Override

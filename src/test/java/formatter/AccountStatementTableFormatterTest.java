@@ -19,10 +19,10 @@ import java.util.UUID;
 import static org.junit.jupiter.api.Assertions.*;
 
 @ExtendWith(MockitoExtension.class)
-class TableFormatterAccountStatementTest {
+class AccountStatementTableFormatterTest {
 
     @InjectMocks
-    private TableFormatterAccountStatement formatter;
+    private AccountStatementTableFormatter formatter;
 
     private final Clock clock = Clock.fixed(Instant.parse("2018-04-29T10:15:30.00Z"), ZoneId.of("UTC"));
 

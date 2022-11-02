@@ -4,12 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fea0ccfe-8d31-4701-aae1-6ff1a6f2068a" name="Changes" comment="[FEAT-US-2] Ajout de la fonctionnalité de retrait d'argent, modèle, service et TUs associés">
+    <list default="true" id="fea0ccfe-8d31-4701-aae1-6ff1a6f2068a" name="Changes" comment="[FEAT-US-3] Ajout de la fonctionnalité d'écriture du relevé de compte dans la sortie console">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/repositories/OperationRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repositories/OperationRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/services/OperationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/OperationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/formatter/FormatterAccountStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/formatter/AccountStatementFormatter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/formatter/TableFormatterAccountStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/formatter/AccountStatementTableFormatter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/services/RepositoryBasedOperationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/RepositoryBasedOperationService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/services/RepositoryBasedOperationServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/services/RepositoryBasedOperationServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/writer/FormattedAccountStatementWriter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/writer/FormattedAccountStatementWriter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/formatter/TableFormatterAccountStatementTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/formatter/AccountStatementTableFormatterTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/writer/FormattedAccountStatementWriterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/writer/FormattedAccountStatementWriterTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,15 +41,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": ""
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -103,7 +105,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667210013866</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="[FEAT-US-3] Ajout de la fonctionnalité d'écriture du relevé de compte dans la sortie console">
+      <created>1667213600824</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1667213600824</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -121,6 +130,7 @@
     <MESSAGE value="Initialisation du projet (gitignore, pom)" />
     <MESSAGE value="[FEAT-US-1] Ajout de la fonctionnalité de dépôt d'argent, modèle, service et TUs associés" />
     <MESSAGE value="[FEAT-US-2] Ajout de la fonctionnalité de retrait d'argent, modèle, service et TUs associés" />
-    <option name="LAST_COMMIT_MESSAGE" value="[FEAT-US-2] Ajout de la fonctionnalité de retrait d'argent, modèle, service et TUs associés" />
+    <MESSAGE value="[FEAT-US-3] Ajout de la fonctionnalité d'écriture du relevé de compte dans la sortie console" />
+    <option name="LAST_COMMIT_MESSAGE" value="[FEAT-US-3] Ajout de la fonctionnalité d'écriture du relevé de compte dans la sortie console" />
   </component>
 </project>

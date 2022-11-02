@@ -11,7 +11,7 @@ import java.util.List;
 
 import static java.lang.String.format;
 
-public class TableFormatterAccountStatement implements FormatterAccountStatement {
+public class AccountStatementTableFormatter implements AccountStatementFormatter {
 
     private static final String FORMAT_DATE = "dd/MM/yyyy HH:mm";
 
@@ -27,7 +27,7 @@ public class TableFormatterAccountStatement implements FormatterAccountStatement
 
     private final DecimalFormat df = new DecimalFormat();
 
-    public TableFormatterAccountStatement() {
+    public AccountStatementTableFormatter() {
         df.setMaximumFractionDigits(NB_DIGITS_BIGDECIMAL);
         df.setGroupingUsed(GROUPING_USED);
     }
